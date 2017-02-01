@@ -1,0 +1,59 @@
+/* Basics */
+body {
+	background: #EEEEEE;
+	margin: 10px;
+	padding: 0;
+}
+
+h1 {
+	font-family: calibri;
+	font-size: 2em;
+}
+
+h2 {
+	font-family: calibri;
+	font-size: 1.5em;
+}
+
+a {
+	font-family: Calibri;
+	font-size: 1.2em;
+	text-decoration: none;
+}
+
+a#picker {
+	font-family: calibri;
+	font-size: 1em;
+	color: black;
+	text-decoration: none;
+}
+
+input {
+	width: 50%;
+}
+
+/* IDs */
+table#kalender {
+	border: thin black solid;
+	font-family: calibri;
+}
+
+td#tag {
+	font-family: calibri;
+	color: blue;
+}
+
+form#form1 {
+	padding: 10px;
+	width: 50%;
+	text-align: center;
+	font-family: Calibri;
+	font-size: 1em;
+	background-color: #bad5ad;
+	border: thin black solid;
+}
+
+h1#front {
+	background: #bad5ad;
+	border: thin black solid;
+}

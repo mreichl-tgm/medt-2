@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Formular</title>
+		<meta charset="UTF-8">
+		
+		<link rel="stylesheet" href="kalender.css">
+
+		<script type="text/javascript" src="datePickKalender.js"></script>
+		<script type="text/javascript" src="checker.js"></script>
+		<script type="text/javascript" src="openDatePicker.js"></script>
+		<script type="text/javascript" src="kalender_prev.js"></script>
+		<script type="text/javascript" src="kalender_next.js"></script>
+	</head>
+	<body>
+		<div align="center">
+			<h1 id="front">1 2 3 und DA!</h1>
+			<form name="form1" id="form1" action="mailto:re1@a1.net" method="POST" onSubmit="checkAll();">
+				<b>Vorname:</b><br>
+				<input name="vorname" type="text" value="" required><br><br>
+			
+				<b>Nachname:</b><br>
+				<input name="nachname" type="text" value="" required><br><br>
+			
+				<b>Geschlecht:</b><br>
+				<input name="geschlechtM" type="radio" value="Männlich" style="width:0px" checked>Männlich<br>
+				<input name="geschlechtW" type="radio" value="Weiblich" style="width:0px">Weiblich<br><br>
+			
+				<b>Geburtsdatum:</b><br>
+				<!--Script für Dropdownfelder Geburtsdatum-->
+				<script type="text/javascript">
+					//Dropdownfeld für Tag.
+					document.write('<select name="tage" onchange="checkGeburt()">');
+						for(i=1; i<32; i++){
+							document.write("<option value='"+i+"'>"+i+"</option>");
+						}
+					document.write('</select>');
+					//Dropdownfeld für Monat.
+					document.write('<select name="monate" onchange="checkGeburt()">');
+						for(i=1; i<13; i++){
+							document.write("<option value='"+i+"'>"+i+"</option>");
+						}
+					document.write('</select>');
+					//Dropdownfeld für Jahr.
+					document.write('<select name="jahre">');
+						var date = new Date();
+						var jahr = date.getFullYear() + 1;
+						
+						for(i=1900; i < jahr; i++){
+							document.write("<option value='"+i+"'>"+i+"</option>");
+						}
+					document.write('</select><br><br>');
+					
+					//Prüft ob das Datum stimmen kann.
+					function checkGeburt() {
+						var monat = document.getElementByName("monate").value;
+						var tagepm = document.getElementByName("tage").value;
+						switch(monat) {
+							case 1 : if(tagepm > 31) {
+										alert("Datum inkorrekt!");
+										document.getElementByName("tage").focus();
+									 }
+									 break;
+							case 2 : if(tagepm > 28) {
+										alert("Datum inkorrekt!");
+										document.getElementByName("tage").focus();
+									 }
+									 break;
+							case 3 : if(tagepm.value > 31) {
+										alert("Datum inkorrekt!");
+										document.getElementByName("tage").focus();
+									 }
+									 break;
+							case 4 : if(tagepm.value > 30) {
+										alert("Datum inkorrekt!");
+										document.getElementByName("tage").focus();
+									 }
+									 break;
+							case 5 : if(tagepm.value > 31) {
+										alert("Datum inkorrekt!");
+										document.FgetElementByName("tage").focus();
+									 }
+									 break;
+							case 6 : if(tagepm.value > 30) {
+										alert("Datum inkorrekt!");
+										document.getElementByName("tage").focus();
+									 }
+									 break;
+							case 7 : if(tagepm > 31) {
+										alert("Datum inkorrekt!");
+										document.getElementByName("tage").focus();
+									 }
+									 break;
+							case 8 : if(tagepm > 31) {
+										alert("Datum inkorrekt!");
+										document.getElementByName("tage").focus();
+									 }
+									 break;
+							case 9 : if(tagepm > 30) {
+										alert("Datum inkorrekt!");
+										document.getElementByName("tage").focus();
+									 }
+									 break;
+							case 10: if(tagepm > 31) {
+										alert("Datum inkorrekt!");
+										document.getElementByName("tage").focus();
+									 }
+									 break;
+							case 11: if(tagepm > 30) {
+										alert("Datum inkorrekt!");
+										document.getElementByName("tage").focus();
+									 }
+									 break;
+							case 12: if(tagepm > 31) {
+										alert("Datum inkorrekt!");
+										document.getElementByName("tage").focus();
+									 }
+							default: break;
+						}
+					}
+				</script>
+				
+				<b>Benutzername:</b><br>
+				<input name="benutzername" type="text" value="" required><br><br>
+				
+				<b>Email:</b><br>
+				<input name="email" type="email" value="" required><br><br>
+				
+				<b>Email-Bestätigen:</b><br>
+				<input name="emailWiederholen" type="email" value="" required><br><br>
+				
+				<b>Passwort:</b><br>
+				<input name="passwort" type="password" value="" required><br><br>
+				
+				<b>Passwort-Bestätigen:</b><br>
+				<input name="passwortWiederholen" type="password" value="" required><br><br>
+				
+				<b>Newsletter:</b><br>
+				<input name="newsletter" type="checkbox" value="" style="width:0px">JA!<br><br>
+				
+				<b>Antrittsdatum:</b><br>
+				<input name="antritt" type="text" value="" onclick="openDatePicker();" readonly required><br><br>
+				
+				<b>Rückkunft:</b><br>
+				<input name="rueckkunft" type="text" value="" onclick="openDatePicker2();" readonly required><br><br>
+				
+				<input name="submit" type="submit" value="Abschicken">
+			</form>
+		</div>
+	</body>
+</html>

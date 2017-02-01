@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Adventkranz</title>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="adventkranz.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var date = new Date();
+            var jahr = date.getYear();
+			var monat = date.getMonth();
+            var datum = date.getDate();
+            var tag = date.getDay();
+            var sonntag1;
+            var sonntag2;
+            var sonntag3;
+            var sonntag4;
+            
+            //Simuliert Weihnachten
+            date.setDate('24.12.+jahr+');
+            
+            //Holt die Sonntage
+            for(i = 0; i < 7; i++) {
+                if(tag == 0) {
+                    sonntag4 = 24 - i;
+                    sonntag3 = 17 - i;
+                    sonntag2 = 10 - i;
+                    sonntag1 =  3 - i;
+                    if(sonntag1 < 1) {
+                        sonntag1 = 33 - i;
+                    }
+                }
+            }
+            
+            //Aufrufen der Kerzen
+            if(monat == 11) {
+                if(datum >= sonntag1){
+                    eineKerzen();
+                }
+                if(datum >= sonntag2){
+                    zweiKerzen();
+                }
+                if(datum >= sonntag3){
+                    dreiKerzen();
+                }
+                if(datum >= sonntag4){
+                    vierKerzen();
+                }
+            } else {
+                if(datum >= sonntag1 && monat == 10){
+                    eineKerzen();
+                } else {
+                    nullKerzen();
+                }
+            }
+		</script>
+	</body>
+</html>

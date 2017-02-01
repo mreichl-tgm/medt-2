@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>brein01_1</title>
+		<link rel="brein01_1.css" type="text/css">
+	</head>
+	
+	<body>
+		<div id="form01">
+			<!--Formulare in HTML kann man vergleichen mit einem Briefumschlag oder Paket
+			in das die Formularfelder gepackt werden
+			name... Name des Forms über welches wir im Anschluss mittels JS das 
+					Formular ansprechen können.
+			action... Vgl. mit einer Zieladresse ist normalerweise der Name der Ziel-HTML-Datei
+			method... Gibt die Methode an wie die Daten übermittelt werden sollen.
+					  Variante 1) POST
+					   Die Daten werden nicht sichtbar im Hintergrund übertragen.
+					   
+					  Variante 2) GET
+					   Die Daten werden sichtbar in der URL übergeben 
+					   - ACHTUNG nicht für sensible z.B.: Passwortdaten geeignet
+					   ssa www.medt.com?varl=wer1&var2=wert2... -->
+			<form name="form01" action="brein01_1_ziel.html" method="GET">
+				<!--Texteingabe-->
+				Nachname:<br>
+				<input name="form01_text_1" type="text" value=""><br>
+				Vorname:<br>
+				<input name="form01_text_2" type="text" value=""><br>
+				<!--/Texteingabe-->
+				
+				<!--Passwort-->
+				Passwort:<br>
+				<input name="form01_pw" type="password" value=""><br>
+				<!--/Passwort-->
+				
+				<!--Radio-->
+				<input name="form01_radio_1" type="radio" value="M">M<br>
+				<input name="form01_radio_2" type="radio" value="W">W<br>
+				<input name="form01_radio_3" type="radio" value="WN">WN<br>
+				<!--/Radio-->
+				
+				<!--Checkbox-->
+				<input name="form01_checkbox" type="checkbox" value="1">Newsletter<br>
+				<!--/Checkbox-->
+				
+				<!--Select-->
+				<select name="form01_select">
+					<option value="1">1 <br>
+					<option value="2">2 <br>
+					<option value="3">3 <br>
+					<option value="4">4 <br>
+					<option value="5">5 <br>
+				</select><br>
+				<!--/Select-->
+				
+				<!--Button-->
+				<input name="form01_button" type="button" value="KLICK MICH"><br>
+				<!--/Button-->
+				
+				<!--Senden-->
+				<input name="form01_submit" type="submit" value="senden">
+				<!--/Senden-->
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,94 @@
+html {
+	margin: 0;
+	padding: 0;
+	background: #EAEAEA;
+}
+
+a {
+	text-decoration: none;
+	color: #EAEAEA;
+}
+
+p {
+	color: #EAEAEA;
+	font-family: Calibri;
+	font-size: 1.25em;
+}
+
+#header {
+	margin: 0px 5px 5px 5px;
+	padding: 0.5em;
+	padding-left: 2em;
+	background: #1A1A1A;
+	color: #EAEAEA;
+	font-family: Calibri;
+	box-shadow: 2px 2px 2px grey;
+}
+
+#list {
+	float: left;
+	width: 50%;
+	margin-left: 5px;
+	padding: 0.5em;
+	padding-left: 2em;
+	background: #1A1A1A;
+	color: #EAEAEA;
+	font-family: Calibri;
+	box-shadow: 2px 2px 2px grey;
+	/*Animation*/
+    position: relative;
+    -webkit-animation: moveItLeft 2s; /* Chrome, Safari, Opera */
+    animation: moveItLeft 2s;
+}
+
+#more {
+	float: right;
+	/*Animation*/
+    position: relative;
+    -webkit-animation: moveItRight 3s; /* Chrome, Safari, Opera */
+    animation: moveItRight 3s;
+}
+
+#add {
+	width: 6em;
+	margin-right: 5px;
+	padding: 0.5em;
+	padding-left: 2em;
+	background: #1A1A1A;
+	color: #EAEAEA;
+	font-family: Calibri;
+	box-shadow: 2px 2px 2px grey;
+}
+
+#imp {
+	width: 6em;
+	margin-right: 5px;
+	padding: 0.5em;
+	padding-left: 2em;
+	background: #1A1A1A;
+	color: #EAEAEA;
+	font-family: Calibri;
+	box-shadow: 2px 2px 2px grey;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes moveItLeft {
+    0% {left:-200%;}
+    100% {left:0px;}
+}
+
+@-webkit-keyframes moveItRight {
+    0% {right:-200%;}
+    100% {right:0px;}
+}
+
+/* Standard syntax */
+@keyframes moveItLeft {
+    0% {left:-200%;}
+    100% {left:0px;}
+}
+
+@keyframes moveItRight {
+    0% {right:-200%;}
+    100% {right:0px;}
+}

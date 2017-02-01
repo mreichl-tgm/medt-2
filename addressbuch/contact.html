@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript" src="contact_javascript.js"></script>    
+		<script>
+			function set_val(html_elem){
+				var item = localStorage.getItem("edit"); //edit
+				document.getElementById("e_t_f").value = item;
+			}
+		</script>
+	</head>
+	<body>
+		<form name="form1">
+			<div id = "header">
+				<h1>  HEADER  </h1>
+			</div>
+			<output id="output"><!-- rötlicher hintergrund und eine Border --></output>
+			<div id="list">
+				<input type="text" style="visibility: hidden" value="" id ="e_t_f">
+				<p>Firstname:<br> 
+				<input type="text" name="firstname" id="firstname"></p>
+				<p>Lastname:<br> 
+				<input type="text" name="lastname" id="lastname"></p>
+				<p>Gender:<br> M
+				<input type="radio" name="gender" value="M"> F<input type="radio" name="gender" value="F"></p>
+				<p>Phone:<br>    
+				<input type="button" value="+" onclick="add('tel')"><input type="button" value="-" onclick="sub('tel')">
+				</p>
+				<div id="tel">
+					
+				</div>
+				<br>
+				<p>Mail*:<br>
+				<input type="button" value="+" onclick="add('mail')"><input type="button" value="-" onclick="sub('mail')">
+				</p>
+				<div id="mail">
+					
+				</div>
+
+				<p>Firm*:<br>
+				<input type="button" value="+" onclick="add('firma')"><input type="button" value="-" onclick="sub('firma')">
+				</p>
+				<div id="firma">
+					
+				</div>
+
+				<p>Hobbys*:<br>
+				<input type="button" value="+" onclick="add('hobby')"><input type="button" value="-" onclick="sub('hobby')">
+				</p>
+				<div id = "hobbys">
+				
+				</div>
+		</form>
+    <script type="text/javascript">
+        add("tel");
+        add("mail");
+        add("firma");
+        add("hobby");
+        set_val(document.getElementById("e_t_f"));
+    </script>
+    <i>* = Optional</i>
+    <br>
+    <input type="button" value="speichern" onclick="save()">
+    <input type="button" value="überprüfen" onclick="validate()">
+    <input type="button" value="contact book" onclick = "window.location = 'main.html'"
+    </div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+div {
+	text-align: center;
+	font-family: Calibri;
+	color: blue;
+}
+
+#main {
+	height: 768px;
+	width: 1024px;
+}
+
+#titel {
+	height: 150px;
+	background-color: peachpuff;
+	border: 5px blue solid;
+	font-size: 4em;
+}
+
+.boxen {
+	width: 1024px;
+}
+
+.box {
+	margin-top: 5px;
+	margin-right: 10px;
+	float: left;
+	height: 100px;
+	width: 18.2%;
+	background-color: peachpuff;
+	border: 5px blue solid;
+	font-size: 1.5em;
+	margin-bottom: 5px;
+}
+
+#adventkranz {
+	height: 400px;
+	background-color: peachpuff;
+	border: 5px blue solid;
+	clear: both;
+}
+
+#kranz {
+    width: 820px;
+    height: 220px;
+    background: green;
+    -moz-border-radius: 200px / 150px;
+    -webkit-border-radius: 200px / 150px;
+    border-radius: 200px / 150px;
+    position: absolute;
+	top: 375px;
+	left: 102px;
+}
+
+#eineKerzen {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-bottom: 120px solid blue;
+	border-left: 60px solid transparent;
+	border-right: 60px solid transparent; 
+	top: 375px;
+	left: 202px;
+}
+
+.eineKerzen {
+	position: absolute;
+	top: 355px;
+	left: 248px;
+}
+
+#zweiKerzen {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-bottom: 120px solid blue;
+	border-left: 60px solid transparent;
+	border-right: 60px solid transparent; 
+	top: 320px;
+	left: 387px;
+}
+
+.zweiKerzen {
+	position: absolute;
+	top: 300px;
+	left: 433px;
+}
+
+#dreiKerzen {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-bottom: 120px solid blue;
+	border-left: 60px solid transparent;
+	border-right: 60px solid transparent; 
+	top: 375px;
+	left: 702px;
+}
+
+.dreiKerzen {
+	position: absolute;
+	top: 355px;
+	left: 748px;
+}
+
+#vierKerzen {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-bottom: 120px solid blue;
+	border-left: 60px solid transparent;
+	border-right: 60px solid transparent;
+	top: 420px;
+	left: 517px;
+}
+
+.vierKerzen {
+	position: absolute; 
+	top: 400px;
+	left: 563px;
+}
+
+#autor {
+	margin-top: 5px;
+	margin-right: 10px;
+	height: 68px;
+	width: 50%;
+	float: left;
+	background-color: peachpuff;
+	border: 5px blue solid;
+	font-size: 2em;
+}
+
+#datum {
+	margin-top: 5px;
+	height: 68px;
+	width: 47%;
+	float: left;
+	background-color: peachpuff;
+	border: 5px blue solid;
+	font-size: 2em;
+}

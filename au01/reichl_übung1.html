@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<title>reichl_übung1_s1</title>
+		<!-- Scripts im Head Bereich 
+			gelten für die gesamte Seite und werden für
+			Funktionen(= Methoden) und globale Dinge wie Variablen,
+			Überprüfungen,... genutzt.
+			Die Scripts im Head werden bereits beim Laden
+			der Seite ausgeführt
+		-->
+		<!--Externe Scripts-->
+		<script type="text/javascript" src="reichl_übung1_s1.js"></script>	
+	</head>
+	<body>
+		<!-- Formulare in HTML kann man vergleichen mit einem Briefumschlag oder Paket in das die
+		Formularfelder gepackt werden
+		
+		name... Name des Forms über welches wir im Anschluss mittels JS das Formular ansprechen können
+		action... vgl. mit einer Zieladresse ist normalerweise der Name der Ziel-HTML-Datei
+		method... gibt die Methode an wie die Dateien übermittelt werden sollen
+					Variante 1.) POST
+						Die Daten werden NICHT sichtbar in Hintergrund übertragen
+						
+					Variante 2.) GET
+						Die Daten werden sichtbar in der URL übergeben - ACHTUNG nicht für sensible
+						z.b. Passwortdaten geeignet
+						ssa www.medt.com?var1=wert1&var2=wert2...
+		-->
+		<form name="formular01" action ="ziel.html" method ="GET" style="font-family:Calibri">
+			<h2>Und jetzt kommt der Kracher - wir produzieren dynamisch HTML-Code</h2>
+			<!--Der statische HTML Teil-->
+			<select name="jahre">
+			<script type="text/javascript">
+				for(i=1900; i<2500;i++){
+					/*Schreibe nun die Funktionsfelder der Select Auswahlliste in einer Schleife
+					document.write ... gib HTML auf der Seite aus */
+					document.write("<option value='"+i+"'>"+i+"</option>");
+				}
+			</script>
+			<!--Ende des statischen Teils-->
+			</select>
+			<br></br>
+			<!-- Wert 1-->
+			Zahl1:&nbsp;&nbsp;</br>
+			<input type="text" name="arg01" value=""></br>
+			
+			<!-- Wert 2-->
+			Zahl2:&nbsp;&nbsp;</br>
+			<input type="text" name="arg02" value=""></br>
+			
+			<!-- Ergebnis-->
+			Ergebnis:&nbsp;&nbsp;</br>
+			<input type="text" name="ergebnis" value=""></br>
+			
+			<!-- Button (kein Submit)
+				 Zum Aufruf von Javascript aus HTML Elemten gibt es sogenannte Event Handler
+				 Beispiele: 
+				 -> onClick™="" ... beim Anklicken eines Elementes 
+				 -> onChange™="" ... bei Änderungen eines Elementes
+				 -> onKeyDown™="" ... bei Tastendruck 
+				 -> onMouseOver™="" ... bei Überfahren mit dem Cursor 
+				 -> onFocus™="" ... bei Fokus auf ein Element
+				 ...
+				 
+				 DOM... Document Object Model, ist ein Modell mit dem man
+				 über eine Struktur (Baumstruktur) auf ein Element
+				 zugreifen kann.
+				 DOM gilt nicht nur für JS sondern für
+				 viele Sprachen wie z.b. XML, ...
+				 
+				 window.document.formularname.feldname.attribut
+				 
+				 -> window... ist das aktuelle Fenster (darüber wird es auch
+				 möglich auf andere Browserfenster zuzugreifen!)
+				 -> document... ich beziehe mich auf das aktuelle Element
+				 -> formularname... name des akt. Formulares
+				 -> feldname... Name des Feldes auf das zugegriffen werden soll
+				 -> attribut... Auf welche Eigenschaft des Feldes soll zugegriffen werden
+				 
+				 window.document.formular01.arg01.value
+				 window.document.formular01.arg02.value						 
+			-->
+			</br><input type="button" name="add" value="addieren" onClick="addiere(window.document.formular01.arg01.value,window.document.formular01.arg02.value)" ></br>
+			</br><input type="button" name="substraction" value="subtrahieren" onClick="subtrahiere(window.document.formular01.arg01.value,window.document.formular01.arg02.value)" ></br>
+			</br><input type="button" name="multiply" value="multiplizieren" onClick="multipliziere(window.document.formular01.arg01.value,window.document.formular01.arg02.value)" ></br>
+			</br><input type="button" name="divide" value="dividieren" onClick="dividiere(window.document.formular01.arg01.value,window.document.formular01.arg02.value)" ></br>
+			</br><input type="button" name="hochrechne" value="hochrechnen" onClick="hochrechnen(window.document.formular01.arg01.value,window.document.formular01.arg02.value)" ></br>
+			</br><input type="button" name="quadratwurzel" value="wurzelziehen" onClick="quadratwurzelziehen(window.document.formular01.arg01.value,window.document.formular01.arg02.value)" ></br>			
+		</form>
+	</body>
+</html>

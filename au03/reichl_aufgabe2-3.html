@@ -1,0 +1,150 @@
+<html>
+	<head>
+		<title>reichl_aufgabe2-3</title>
+		<meta charset="UTF-8">
+		
+		<link rel="stylesheet" href="reichl_aufgabe2-3.css">
+		<script type="text/javascript" src="reichl_aufgabe2-3.js">
+		</script>
+	</head>
+	<body>
+		<form name="Formular" id="form1" action="mailto:re1@a1.net" method="POST" onSubmit="checkAll();">
+			Vorname:<br>
+			<input name="vorname" type="text" value="" required><br><br>
+			
+			Nachname:<br>
+			<input name="nachname" type="text" value="" required><br><br>
+			
+			Geschlecht:<br>
+			<input name="geschlechtM" type="radio" value="Männlich" checked>Männlich<br>
+			<input name="geschlechtW" type="radio" value="Weiblich">Weiblich<br>
+			<input name="geschlechtA" type="radio" value="Anderes?">Anderes?<br><br>
+			
+			Geburtsdatum:<br>
+			<script type="text/javascript">
+				document.write('<select name="tage" onchange="checkGeburt()">');
+					for(i=1; i<32; i++){
+						document.write("<option value='"+i+"'>"+i+"</option>");
+					}
+				document.write('</select>');
+				document.write('<select name="monate" onchange="checkGeburt()">');
+					for(i=1; i<13; i++){
+						document.write("<option value='"+i+"'>"+i+"</option>");
+					}
+				document.write('</select>');
+				document.write('<select name="jahre">');
+					var date = new Date();
+					var jahr = date.getFullYear() + 1;
+					
+					for(i=1900; i < jahr; i++){
+						document.write("<option value='"+i+"'>"+i+"</option>");
+					}
+				document.write('</select><br><br>');
+				var monat = document.Formular.monate.value;
+				
+				function checkGeburt() {
+					switch(monat) {
+						case 1 : if(document.Formular.tage.value > 31) {
+									alert("Datum inkorrekt!");
+									document.Formular.tage.focus();
+								 }
+								 break;
+						case 2 : if(document.Formular.tage.value > 28) {
+									alert("Datum inkorrekt!");
+									document.Formular.tage.focus();
+								 }
+								 break;
+						case 3 : if(document.Formular.tage.value > 31) {
+									alert("Datum inkorrekt!");
+									document.Formular.tage.focus();
+								 }
+								 break;
+						case 4 : if(document.Formular.tage.value > 30) {
+									alert("Datum inkorrekt!");
+									document.Formular.tage.focus();
+								 }
+								 break;
+						case 5 : if(document.Formular.tage.value > 31) {
+									alert("Datum inkorrekt!");
+									document.Formular.tage.focus();
+								 }
+								 break;
+						case 6 : if(document.Formular.tage.value > 30) {
+									alert("Datum inkorrekt!");
+									document.Formular.tage.focus();
+								 }
+								 break;
+						case 7 : if(document.Formular.tage.value > 31) {
+									alert("Datum inkorrekt!");
+									document.Formular.tage.focus();
+								 }
+								 break;
+						case 8 : if(document.Formular.tage.value > 31) {
+									alert("Datum inkorrekt!");
+									document.Formular.tage.focus();
+								 }
+								 break;
+						case 9 : if(document.Formular.tage.value > 30) {
+									alert("Datum inkorrekt!");
+									document.Formular.tage.focus();
+								 }
+								 break;
+						case 10: if(document.Formular.tage.value > 31) {
+									alert("Datum inkorrekt!");
+									document.Formular.tage.focus();
+								 }
+								 break;
+						case 11: if(document.Formular.tage.value > 30) {
+									alert("Datum inkorrekt!");
+									document.Formular.tage.focus();
+								 }
+								 break;
+						case 12: if(document.Formular.tage.value > 31) {
+									alert("Datum inkorrekt!");
+									document.Formular.tage.focus();
+								 }
+						default: break;
+					}
+				}
+			</script>
+			
+			Interessen:<br>
+			<input name="interesse1" type="checkbox" value="computerspiele">Computerspiele<br>
+			<input name="interesse2" type="checkbox" value="programmieren">Programmieren<br>
+			<input name="interesse3" type="checkbox" value="fußball">Fußball<br>
+			<input name="interesse4" type="checkbox" value="garten">Gärtnern<br>
+			<input name="interesse5" type="checkbox" value="essen">Essen<br>
+			<input name="interesse6" type="checkbox" value="kochen">Kochen<br>
+			<input name="interesse7" type="checkbox" value="feiern">Feiern<br>
+			<input name="interesse8" type="checkbox" value="sport">Sport<br>
+			<input name="interesse9" type="checkbox" value="alkahol">Alkahol<br>
+			<input name="interesse10" type="checkbox" value="drogen">Drogen<br><br>
+			
+			Benutzername:<br>
+			<input name="benutzername" type="text" value="" required><br><br>
+			
+			Email:<br>
+			<input name="email" type="email" value="" required><br><br>
+			
+			Email-Bestätigen:<br>
+			<input name="emailWiederholen" type="email" value="" required><br><br>
+			
+			Passwort:<br>
+			<input name="passwort" type="password" value="" required><br><br>
+			
+			Passwort-Bestätigen:<br>
+			<input name="passwortWiederholen" type="password" value="" required><br><br>
+			
+			Newsletter:<br>
+			<input name="newsletter" type="checkbox" value="">JA!<br><br>
+			
+			Antrittsdatum:<br>
+			<input name="antritt" type="text" value="" onclick="openDatePicker();" readonly><br><br>
+			
+			Rückkunft:<br>
+			<input name="rueckkunft" type="text" value="" onclick="openDatePicker();" readonly><br><br>
+			
+			<input name="submit" type="submit" value="Abschicken">
+		</form>
+	</body>
+</html>

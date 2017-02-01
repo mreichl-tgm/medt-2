@@ -1,0 +1,19 @@
+<html>
+<head>
+	<script type="text/javascript">
+		//Popup Variable über die dann das Fenster gespeichert werden soll
+		var popup;
+		
+		function SelectDate(){
+			//Öffne ein Popup Window und stelle es auf aktiv - sprich Focus
+			popup = window.open("kindPopup.html", "Popup", "width=300,height=100");
+			popup.focus();
+		}
+	</script>
+</head>
+<body>
+	<form name="testform">
+		<!--Unser Datumstextfeld, über das dann beim Focus das Popup aufgerufen werden soll-->
+		Datum von: <input type="text" id="dateTextfeldId" readonly="readonly" onclick="SelectDate();" />
+	</form>
+</body>

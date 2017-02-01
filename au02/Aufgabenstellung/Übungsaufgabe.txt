@@ -1,0 +1,19 @@
+Übung
+
+Versucht nun mit eurem Wissen über dynamischen Seitenaufbau,
+Kontrollstrukturen und externen Funktionen in eigenen Files,...
+eine Anmeldeformular für einen Webdienst aufzubauen.
+Dieses Formular soll dann vor dem Absenden auf möglichst alle
+Dinge überprüft werden und erst danach durch JS weggeschickt werden.
+
+Mindestanforderungen
+	Vorname
+	Nachname
+	Geschlecht
+	Geburtsdatum (3 Drop Down Listenfelder)
+	Newsletter Ja/Nein
+	Interessensgebiet 1:
+		mindestens 10 Checkboxen -> Meckert wenn gar keine 
+									ausgewählt wurde
+	Email -> email wird überprüft (substring!!! search()... -1 nicht gefunden/ 0-n zurückliefert- erste Buchstabe des Vorkommens Stelle)
+	Anmerkungen Textbereich

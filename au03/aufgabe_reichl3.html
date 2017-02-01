@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Aufgabe 3</title>
+		<meta charset="UTF-8">
+		
+		<link rel="stylesheet" href="aufgabe_reichl3.css">
+		
+		<script type="text/javascript" src="aufgabe_reichl3.js"></script>
+		<script type="text/javascript" src="aufgabe_reichl3_next.js"></script>
+		<script type="text/javascript" src="aufgabe_reichl3_prev.js"></script>		
+	</head>
+	
+	<body>
+		<script type="text/javascript">
+			document.open();
+			//Hier werden die Daten vom PC selbst geholt da JavaScript eine Clientseitige Sprache ist.
+			var date 	= new Date();
+			var datum	= date.getDate();
+			var monat   = date.getMonth();
+			var jahr	= date.getYear();
+			
+			kalender(date, datum, monat, jahr);
+			
+			//Falls das Jahr fälschlicherweise kleiner 1900 ist wird es auf 1900 gesetzt.
+			if(jahr < 1900)jahr+=1900;
+			
+			document.close();
+		</script>
+	</body>
+</html>

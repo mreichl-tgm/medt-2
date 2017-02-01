@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Datepicker</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="kalender.css">
+		<script type="text/javascript" src="datePickKalender.js"></script>
+		<script type="text/javascript" src="kalender_next.js"></script>
+		<script type="text/javascript" src="kalender_prev.js"></script>
+		<script type="text/javascript">
+			function datePickerRueckkunft(actualDate) {
+				//Sieht nach ob der opener geöffnt ist und noch nicht geschlossen wurde - der opener ist die Referenz auf das Objekt (die Parent Seite) die das aktuelle Objekt geöffnet hat.
+				if (window.opener != null && !window.opener.closed) {
+				
+				//Greift auf das txtDate01 Attribut - Name mittels DOM zu
+				var txtDate = window.opener.document.getElementByName("rueckkunft");
+	
+				//Setze den Wert des Feldes
+				txtDate.value = actualDate;
+				}
+				//Schliesse das Popup
+				window.close();
+			}
+		</script>
+	</head>
+	
+	<body>
+		<script type="text/javascript">
+			document.open();
+			
+			//Hier werden die Daten vom PC selbst geholt da JavaScript eine Clientseitige Sprache ist.
+			var date 	= new Date();
+			var datum	= date.getDate();
+			var monat   = date.getMonth();
+			var jahr	= date.getYear();
+			
+			datePickKalender(date, datum, monat, jahr);
+			
+			//Falls das Jahr fälschlicherweise kleiner 1900 ist wird es auf 1900 gesetzt.
+			if(jahr < 1900)jahr+=1900;
+			
+			document.close();
+		</script>
+	</body>
+</html>

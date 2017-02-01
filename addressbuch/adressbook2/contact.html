@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <style>@import "style.css"</style>
+        
+        <script type="text/javascript" src="read.js"></script>
+        <script type="text/javascript" src="edit.js"></script>
+        <script type="text/javascript">
+            var editing = false,
+                fn = "",
+                ln = "",
+                gen = "",
+                mail = [""],
+                mailString = "",
+                phone = [""],
+                phoneString = "",
+                note = [""],
+                noteString = "",
+                contact = "",
+                contactString = "";
+            
+            if (cookie.indexOf("(") > -1) {
+                contact = parseInt(cookie.substring(cookie.indexOf("(") + 1, cookie.indexOf(")"))) - 1;
+                document.cookie = document.cookie.substring(0, document.cookie.length - 3);
+                editing = true;
+
+                fn = firstnames[contact];
+                ln = lastnames[contact];                
+                gen = genders[contact];
+                mail = emails[contact].split(",");
+                phone = phones[contact].split(",");
+                note = notes[contact].split(",");
+            }
+            
+            if (editing) {
+                document.write('<title>' + fn + ln + '</title>');
+            } else {
+                document.write('<title>New Contact</title>');
+            }
+            
+            function checked(fn, ln) {                
+                var err1 = "",
+                    err2 = "";
+
+                if (fn == "") err1 = "First Name required!";                
+                if (ln == "") err2 = "Last Name required!";
+
+                if (err1 == "" && err2 == "") {
+                    return true;
+                } else {
+                    alert("" + err1 + " " + err2 + "");
+                    return false;
+                }
+            }
+            
+            function save() {
+                fn = document.getElementsByName("firstname")[0].value;
+                ln = document.getElementsByName("lastname")[0].value;
+                
+                for (var i = 0; i < document.getElementsByName("gender").length; i += 1) {
+                    if (document.getElementsByName("gender")[i].checked) {
+                        gen = document.getElementsByName("gender")[i].value;
+                    }
+                }
+                
+                if (checked(fn, ln)) {
+                    mail = document.getElementsByName("mail");
+                    for (var i = 0; i < mail.length; i += 1) {
+                        mailString += mail[i].value + ",";
+                    }            
+                    
+                    phone = document.getElementsByName("phone");
+                    for (var i = 0; i < phone.length; i += 1) {
+                        phoneString += phone[i].value + ",";
+                    }
+                    
+                    note = document.getElementsByName("note");
+                    for (var i = 0; i < note.length; i += 1) {
+                        noteString += note[i].value + ",";
+                    }
+                    
+                    contactString = "firstname" + fn + "lastname" + ln + "gender" + gen + "emails" + mailString + "phones" + phoneString + "notes" + noteString;
+                    
+                    if (editing) {
+                        var old = contacts[(contact)];
+                        document.cookie = cookie.replace(cookie.substring(indexOf(old) , indexOf(old) + old.length()), contactString);
+                    } else {
+                        document.cookie += contactString + "|";
+                    }
+                }
+            }
+        </script>
+    </head>
+    
+    <body>
+        <div id="header">
+            <script type="text/javascript">
+            if (editing) {
+                document.write('<h1>'+fn+' '+ln+'</h1>');
+            } else {
+                document.write('<h1>New Contact!</h1>');
+            }
+            </script>
+        </div>
+
+        <div id="list">
+            <form name="form">
+                <p>First Name:<br>
+                <script type="text/javascript"> 
+                    if (editing) { 
+                        document.write('<input name="firstname" id="firstname" type="text" value="'+fn+'">'); 
+                    } else { 
+                        document.write('<input name="firstname" id="firstname" type="text" value="">'); 
+                    }
+                    </script></p>
+
+                <p>Last Name:<br>
+                <script type="text/javascript"> 
+                    if (editing) { 
+                        document.write('<input name="lastname" id="lastname" type="text" value="'+ln+'">'); 
+                    } else { 
+                        document.write('<input name="lastname" id="lastname" type="text" value="">'); 
+                    }
+                </script></p>
+
+                <p>Gender:<br>
+                <script type="text/javascript"> 
+                    if(editing == 1) {
+                        if (gen == "M") { 
+                            document.write('M<input type="radio" name="gender" value="M" checked> F<input type="radio" name="gender" value="F">'); 
+                        } else { 
+                            document.write('M<input type="radio" name="gender" value="M"> F<input type="radio" name="gender" value="F" checked>'); 
+                        }
+                    } else { 
+                        document.write('M<input type="radio" name="gender" value="M" checked> F<input type="radio" name="gender" value="F">'); 
+                    }
+                </script></p>
+
+                <p>Email:<br>
+                <input type="button" value="+" onclick="add('mail')">
+                <input type="button" value="-" onclick="sub('mail')">
+                </p>
+                <div id="mail">
+                    <script type="text/javascript">
+                        for(var i = 0; i < mail.length; i += 1) {
+                            document.write('<input type="mail" name="mail" value="' + mail[i] + '"><br>');
+                        }
+                    </script>
+                </div>
+
+                <p>Phone:<br>    
+                <input type="button" value="+" onclick="add('phone')">
+                <input type="button" value="-" onclick="sub('phone')">
+                </p>
+                <div id="phone">
+                    <script type="text/javascript">
+                        for(var i = 0; i < phone.length; i += 1) {
+                            document.write('<input type="tel" name="phone" value="' + phone[i] + '"><br>');
+                        }
+                    </script>
+                </div>
+
+                <p>Notes:<br>
+                <input type="button" value="+" onclick="add('note')">
+                <input type="button" value="-" onclick="sub('note')">
+                </p>
+                <div id="note">
+                    <script type="text/javascript">
+                        for(var i = 0; i < note.length; i += 1) {
+                            document.write('<input type="text" name="note" id="note" value="' + note[i] + '"><br>');
+                        }
+                    </script>
+                </div>
+                <br>
+            </form>
+        </div>
+
+        <div id="box">
+            <div id="add">
+                <a href="#" onclick="save(); editing = true;">+ Save</a>
+            </div>
+            <div id="imp">
+                <a href="index.html" onclick="editing = false;">+ Back</a>
+            </div>
+        </div>
+    </body>
+</html>

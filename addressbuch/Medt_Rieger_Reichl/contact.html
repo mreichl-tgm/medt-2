@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript" src="contact_javascript.js"></script>    
+		<script>
+			function set_value(html_elem){
+				var item = localStorage.getItem("edit"); //edit
+				document.getElementById("e_t_f").value = item;
+			}
+		</script>
+	</head>
+	<body>
+		<div id = "header">
+			<h1>  HEADER  </h1>
+		</div>
+		<div id="list">
+			<form name="form1">
+				<output id="output"><!-- rötlicher hintergrund und eine Border --></output>
+				<input type="text" style="visibility:hidden" value="" id ="e_t_f">
+				<p>Firstname:<br>
+				<input type="text" name="firstname" id="firstname"></p>
+				<p>Lastname:<br> 
+				<input type="text" name="lastname" id="lastname"></p>
+				<p>Gender:<br> M
+				<input type="radio" name="gender" value="M" checked> F<input type="radio" name="gender" value="F"></p>
+				<p>Phone:<br>    
+				<input type="button" value="+" onclick="add('tel')"><input type="button" value="-" onclick="sub('tel')">
+				</p>
+				<div id="tel">
+					
+				</div>
+				<br>
+				<p>Mail*:<br>
+				<input type="button" value="+" onclick="add('mail')"><input type="button" value="-" onclick="sub('mail')">
+				</p>
+				<div id="mail">
+					
+				</div>
+
+				<p>Firm*:<br>
+				<input type="button" value="+" onclick="add('firma')"><input type="button" value="-" onclick="sub('firma')">
+				</p>
+				<div id="firma">
+					
+				</div>
+
+				<p>Hobbys*:<br>
+				<input type="button" value="+" onclick="add('hobby')"><input type="button" value="-" onclick="sub('hobby')">
+				</p>
+				<div id = "hobbys">
+				
+				</div>
+			</form>
+			<script type="text/javascript">
+				add("phone");
+				add("email");
+				add("hobby");
+				set_value(document.getElementById("e_t_f"));
+			</script>
+			<i>* = Optional</i>
+			<br>
+		</div>
+		<div id="box">
+			<div id="add">
+				<a href="#" onclick="save()">+ Save</a>
+			</div>
+			<div id="imp">
+				<a href="main.html" onclick="save()">+ Back</a>
+			</div>
+		</div>
+	</body>
+</html>

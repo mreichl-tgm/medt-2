@@ -1,0 +1,30 @@
+body {
+	margin: 10px;
+	padding: 0;
+}
+
+h1 {
+	font-family: calibri;
+	font-size: 2em;
+}
+
+h2 {
+	font-family: calibri;
+	font-size: 1.5em;
+}
+
+a {
+	font-family: Calibri;
+	font-size: 1.5em;
+	text-decoration: none;
+}
+
+table#kalender {
+	border: thin black solid;
+	font-family: calibri;
+}
+
+td#tag {
+	font-family: calibri;
+	color: blue;
+}

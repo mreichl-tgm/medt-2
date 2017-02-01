@@ -1,0 +1,40 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function SetDate(actualDate) {
+			//Sieht nach ob der opener geöffnt ist und noch nicht geschlossen wurde - der opener ist die Referenz auf das Objekt (die Parent Seite) die das aktuelle Objekt geöffnet hat.
+			if (window.opener != null && !window.opener.closed) {
+				
+				//Greift auf das txtDate01 Attribut - Name mittels DOM zu
+				var txtDate = window.opener.document.getElementById("dateTextfeldId");
+
+				//Setze den Wert des Feldes
+				txtDate.value = actualDate;
+			}
+			//Schliesse das Popup
+			window.close();
+		}
+	</script>
+</head>
+<body>
+Dummykalender Monat X
+	<table>
+	<tr>
+		<th>Mo</th><th>Di</th><th>Mi</th><th>Do</th><th>Fr</th><th>Sa</th><th>So</th>
+	</tr>
+	<tr>
+		<td>01</td>
+		<td>02</td>
+		<td>03</td>
+		<!--Hier kommt der Aufruf der selbst geschrieben Funktion setDate mit dem Datumsparameter
+		Hier muesst ihr dann eure dynamisch bestimmten Daten aus dem Blätterkalender einfügen 
+		Tipp: document.write()... -->
+		<td><a href="#" onClick="SetDate('04.10.2014');">04</a></td>
+		<td>05</td>
+		<td>06</td>
+		<td>07</td>
+	</tr>
+	</table>
+
+</body>
+</html>
