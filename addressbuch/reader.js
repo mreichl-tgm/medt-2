@@ -69,6 +69,7 @@ function draw_misc(name) {
     // Until this point its button
     node = document.createElement("input");
     node.setAttribute("value", name);
+	// should be useful later: node.setAttribute("name", name);
     node.setAttribute("name", "hide");
     document.getElementById("output").appendChild(node);
     // Until this point its the text
